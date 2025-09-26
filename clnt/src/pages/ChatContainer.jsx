@@ -16,8 +16,8 @@ function ChatContainer() {
     ]);
 
     try {
-      const res = await axios.post(
-        'http://localhost:8000/api/assistant/chat',
+      const res = await API.post(
+        'assistant/chat',
         { userMessage }
       );
       const botReply = res.data.reply;

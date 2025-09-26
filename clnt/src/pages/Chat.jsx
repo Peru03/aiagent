@@ -61,7 +61,6 @@ const handleCancelOrder = async (orderId) => {
 
   const handleConfirmOrder = async (msg) => {
     // Extract product, quantity, price from the bot message
-    console.log("DFDSFD");
     console.log(msg);
 
     const regex = /(\d+)\s*(?:kg|packet|packets|litre|litres?)?\s*of\s+([A-Za-z]+)/i;
