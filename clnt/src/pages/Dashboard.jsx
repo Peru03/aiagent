@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API from "../config";
+import API from "../Config";
 import { Box, Typography, Paper } from "@mui/material";
 
 export default function Dashboard() {

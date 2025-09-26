@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import ReactMarkdown from "react-markdown";
-import API from "../config";
+import API from "../Config";
 
 function ChatUI({ messages = [], setMessages, onSend }) {
   const [input, setInput] = useState("");
