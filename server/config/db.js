@@ -1,10 +1,14 @@
 const mysql = require("mysql2");
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
+  host: "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+  port:4000,
+  user: "GDDdnEwNZFkh5LU.root",
+  password: "5YoYlCkUT11JhFpG",
   database: "reactadmin",
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
 
 db.connect((err) => {
