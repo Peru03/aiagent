@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../config"; // import axios instance
+import API from "../Config"; // import axios instance
 import { AuthContext } from "../AuthContext";
 
 import {
