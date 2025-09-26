@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://aiagent-production-a2f5.up.railway.app/api",
 });
 
 API.interceptors.request.use((config) => {
@@ -14,7 +14,7 @@ API.interceptors.request.use((config) => {
 const token = localStorage.getItem('token');
 
 const Config = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://aiagent-production-a2f5.up.railway.app/api",
   headers: {
     'Authorization': `Bearer ${token}`
   },
