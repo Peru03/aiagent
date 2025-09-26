@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import ChatUI from './ChatUI';
 import ChatUI from './Chat';
-import axios from 'axios';
+import API from "../Config";
 
 function ChatContainer() {
   const [messages, setMessages] = useState([
