@@ -1,10 +1,11 @@
 const mysql = require("mysql2");
+require("dotenv").config({ path: ".env" });
 
 const db = mysql.createConnection({
-  host: "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
-  port:4000,
-  user: "GDDdnEwNZFkh5LU.root",
-  password: "5YoYlCkUT11JhFpG",
+  host: process.env.Server_Host,
+  port:process.env.Server_Port,
+  user: process.env.Server_Username,
+  password: process.env.Password,
   database: "reactadmin",
   ssl: {
     rejectUnauthorized: true
