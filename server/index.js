@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+var cors = require('cors')
 const bodyParser= require('body-parser');
 const connectDB = require("./config/db");
 
@@ -8,11 +8,7 @@ require("dotenv").config({ path: ".env" });
 
 const app = express();
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(bodyParser.json());
