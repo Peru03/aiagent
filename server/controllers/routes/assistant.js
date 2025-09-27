@@ -14,26 +14,6 @@ const geminiModel = googleAI.getGenerativeModel({
   model: "gemini-2.5-flash"
 });
 
-// Fetch products from DB
-// async function fetchProducts() {
-//   try {
-//     const [rows] = await db.execute(
-//       "SELECT id, name, stock, unit, price_per_unit FROM products"
-//     );
-
-//     return rows.map((row) => ({
-//       id: row.id,
-//       name: row.name,
-//       stock: row.stock,
-//       unit: row.unit,
-//       pricePerUnit: row.price_per_unit,
-//     }));
-//   } catch (err) {
-//     console.error("DB fetch error:", err);
-//     return []; // fallback empty array
-//   }
-// }
-
 async function fetchProducts() {
   return new Promise((resolve, reject) => {
     db.query(
@@ -110,21 +90,6 @@ router.post("/chat", async (req, res) => {
     res.status(500).json({ error: err.message || "Assistant failed" });
   }
 });
-// router.post("/chat", async (req, res) => {
-//   try {
-//     const { userMessage } = req.body;
-
-//     const prompt = await buildSystemPrompt();
-//     const finalPrompt = `${prompt}\n\nUser: ${userMessage}`;
-
-//     const result = await model.generateContent(finalPrompt);
-//     // const reply = result.response.text();
-//     const reply = result.output[0].content[0].text.res.json({ reply });
-//   } catch (err) {
-//     console.error("Error in assistant chat:", err);
-//     res.status(500).json({ error: "Assistant failed" });
-//   }
-// });
 
 // Export router as CommonJS
 module.exports = router;
