@@ -4,21 +4,15 @@ const API = axios.create({
   baseURL: "https://aiagent-production-a2f5.up.railway.app/api",
 });
 
+// Add token dynamically before every request
 API.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token"); // must exist
+  const token = localStorage.getItem("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
-});
-const token = localStorage.getItem('token');
-
-const Config = axios.create({
-  baseURL: "https://aiagent-production-a2f5.up.railway.app/api",
-  headers: {
-    'Authorization': `Bearer ${token}`
-  },
+}, (error) => {
+  return Promise.reject(error);
 });
 
 export default API;
-

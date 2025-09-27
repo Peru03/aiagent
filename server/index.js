@@ -8,12 +8,12 @@ require("dotenv").config({ path: ".env" });
 
 const app = express();
 
-
 app.use(cors({
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
