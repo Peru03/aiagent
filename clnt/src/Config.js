@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://aiagent-lzs3.vercel.app/api",
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 API.interceptors.request.use((config) => {
